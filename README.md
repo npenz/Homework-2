@@ -1,5 +1,6 @@
 # Homework-2
 Give me a list of football coaches who have been a head coach at the same school for at least three years. Make sure your output includes:
+
 •	A single name field that displays a coach's name in first-last format (i.e., John Smith).
 
 •	The name, id and state of the school.
