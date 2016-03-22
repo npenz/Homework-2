@@ -11,13 +11,13 @@ SELECT CONCAT (c.first_name,' ', c.last_name) AS "Name",
 		AVG (ct.school_pay) AS "Avg school pay",
 		AVG (ct.other_pay) AS "Avg other pay",
 		AVG (ct.total_pay) AS "Avg total pay"
-FROM sandbox.coach AS c 
+FROM sandbox.coach AS c
+INNER JOIN sandbox.contract AS ct
+		on ct.coach_id = c.id
 INNER JOIN sandbox.school AS s
-        on c.alma_mater_id = s.school_id
+		on s.school_id = ct.school_id
 INNER JOIN reference.state AS st
 		on s.state = st.state_abbreviation
-INNER JOIN sandbox.contract AS ct
-		on c.id = ct.coach_id
 INNER JOIN sandbox.position AS pt
 		on pt.id = ct.position_id AND pt.id = 1
 LEFT OUTER JOIN sandbox.coach_record AS rd
