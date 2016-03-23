@@ -1,5 +1,5 @@
 --homework
-
+SELECT  
 		CONCAT (c.first_name,' ', c.last_name) AS "Name1",
         s.school_name AS "School",
 		s.school_id AS "ID",
